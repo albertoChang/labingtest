@@ -1,0 +1,18 @@
+Started GET "/dashboard/index" for 127.0.0.1 at 2019-03-13 18:33:49 -0500
+Processing by DashboardController#index as HTML
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+  Rendered layouts/_topbar.html.erb (0.3ms)
+Completed 200 OK in 757ms (Views: 750.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dashboard/index" for 127.0.0.1 at 2019-03-13 18:34:27 -0500
+Processing by DashboardController#index as HTML
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+  Rendered layouts/_topbar.html.erb (0.6ms)
+Completed 200 OK in 56ms (Views: 54.1ms | ActiveRecord: 0.0ms)
+
+
