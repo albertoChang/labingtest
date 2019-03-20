@@ -1,0 +1,2 @@
+Laboratory.create(name: "laboratorio Test A", email: "lab_A@pucp.pe", address: "Av. Universitaria 1801, San Miguel Lima 32", phone: "5555555", description: "Laboratorio de prueba encargado de mostrar el flujo A")
+Laboratory.create(name: "laboratorio Test B", email: "lab_B@pucp.pe", address: "Av. Universitaria 1801, San Miguel Lima 32", phone: "5554444", description: "Laboratorio de prueba encargado de mostrar el flujo B")
