@@ -20,4 +20,7 @@
 //= require chart.js/Chart.min
 //= require demo/chart-area-demo
 //= require demo/chart-pie-demo
+//= require demo/datatables-demo
+//= require datatables/jquery.dataTables.min
+//= require datatables/dataTables.bootstrap4.min
 //= require_tree .

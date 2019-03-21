@@ -1,0 +1,14 @@
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+  <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
+    <h1 class="m-0 font-weight-bold text-primary">Laboratorios</h1>
+    <div>
+      <%= link_to 'Nuevo Laboratorio', new_laboratory_path, class: "btn btn-primary right" %>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <%= render 'laboratories_table', laboratories: @laboratories %>
+    </div>
+  </div>
+</div>

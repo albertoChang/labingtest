@@ -1,0 +1,30 @@
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" placeholder="Buscar Laboratorios">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Teléfono</th>
+      <th>Correo</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% laboratories.each do |laboratory| %>
+      <tr>
+        <td><%= laboratory.name %></td>
+        <td><%= laboratory.phone %></td>
+        <td><%= laboratory.email %></td>
+        <td>
+          <%= link_to '<i class="fa fa-eye" aria-hidden="true"></i>'.html_safe, laboratory_path(laboratory), class: "btn btn-info btn-sm", data: { "toggle" => "tooltip" }, title: "Ver" %>
+          <%= link_to '<i class="fa fa-edit" aria-hidden="true"></i>'.html_safe, edit_laboratory_path(laboratory), class: "btn btn-success btn-sm", data: { "toggle" => "tooltip" }, title: "Editar" %>
+          <%#= link_to toggle_status_laboratory_path(laboratory), id: "laboratory-lock-#{laboratory.id}", class: "btn btn-danger btn-sm", data: { "toggle" => "tooltip" }, title: "#{laboratory.tooltip_status}", method: :put, remote: true do %>
+            <%# if laboratory.active %>
+              <!--i class="fa fa-unlock" aria-hidden="true"></i-->
+            <%# else %>
+              <!--i class="fa fa-lock" aria-hidden="true"></i-->
+            <%# end %>
+          <%# end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
