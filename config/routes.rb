@@ -15,4 +15,6 @@ Rails.application.routes.draw do
       root 'devise/sessions#new'
     end
   end
+
+  resources :laboratories
 end
