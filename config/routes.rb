@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   end
 
   resources :laboratories
+
+  resources :roles
 end
