@@ -33,7 +33,7 @@ class Role < ApplicationRecord
   end 
 
   def self.belongs_work_environment current_user
-    if current_user.admin?
+    if current_user.laboratory.nil?
       Role.all
     elsif current_user.employee?
       where(laboratory_id: current_user.laboratory)
