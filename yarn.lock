@@ -12,12 +12,19 @@ bootstrap@4.3.1:
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.3.1.tgz#280ca8f610504d99d7b6b4bfc4b68cec601704ac"
   integrity sha512-rXqOmH1VilAt2DyPzluTi2blhk17bO7ef+zLLPlWvG494pDxcM234pJ8wTc/6R40UWizAIIMgxjvxZg5kmsbag==
 
+datepicker-bootstrap@^1.9.13:
+  version "1.9.13"
+  resolved "https://registry.yarnpkg.com/datepicker-bootstrap/-/datepicker-bootstrap-1.9.13.tgz#85f6b629183288977ebd4bada8dc5e10049e1e7a"
+  integrity sha512-bzokJhozVRxqQ0VYLOVcOpudkaDfE0FML45DN7aKChzIkF+/ilMRYy6MH5OeTVNt/sb+DQyZQGAD5A/5XyGajQ==
+  dependencies:
+    jquery ">=1.9.1"
+
 jquery.easing@1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/jquery.easing/-/jquery.easing-1.4.1.tgz#47982c5836bd758fd48494923c4a101ef6e93e3b"
   integrity sha1-R5gsWDa9dY/UhJSSPEoQHvbpPjs=
 
-jquery@3.3.1:
+jquery@3.3.1, jquery@>=1.9.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
   integrity sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg==

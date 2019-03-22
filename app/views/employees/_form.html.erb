@@ -1,0 +1,103 @@
+<%= form_for employee, method: method, url: path  do |f| %>
+
+  <div class="form-group row">
+    <%= f.label :Nombres, class: "col-md-3 col-form-label" %>
+    <div class="col-md-9 input-wrapper">
+      <%= f.text_field :first_name, class: "form-control form-control-user", required:"required" , maxlength:"80" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :Apellidos, class: "col-md-3 col-form-label" %>
+    <div class="col-md-9 input-wrapper">
+      <%= f.text_field :last_name, class: "form-control form-control-user", required:"required" , maxlength:"80" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :Correo_electrónico , class: "col-md-3 col-form-label" %>
+    <div class="col-md-9 input-wrapper">
+      <%= f.text_field :email, class: "form-control form-control-user", required:"required" ,maxlength:"60", email: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :Fecha_de_nacimiento , class: "col-md-3 col-form-label" %>
+    <div class="date col-md-9 input-wrapper">
+      <div class="input-group input-append date">
+        <%= f.text_field :date_of_birth, value: employee.date_of_birth ? employee.date_of_birth.strftime("%d/%m/%Y") : "", class: "form-control form-control-user", id:"datepicker", required: "required", date: true, birth: true, onlyAdult: true%>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :RUC, class: "col-md-3 col-form-label" %>
+    <div class="col-md-9 input-wrapper">
+      <%= f.text_field :ruc, class: "form-control form-control-user", required:"required" , maxlength:"11" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= f.label :Teléfono, class: "col-md-3 col-form-label" %>
+    <div class="col-md-9 input-wrapper">
+      <%= f.text_field :phone, class: "form-control form-control-user only-numbers",maxlength:"9",required:"required" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :Dirección, class: "col-md-3 col-form-label" %>
+    <div class="col-md-9 input-wrapper">
+      <%= f.text_field :address, class: "form-control form-control-user", required:"required" , maxlength:"60" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :Persona_de_contacto, class: "col-md-3 col-form-label" %>
+    <div class="col-md-9 input-wrapper">
+      <%= f.text_field :contact_person, class: "form-control form-control-user", required:"required" , maxlength:"60" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :Género, class: "col-md-3 col-form-label" %>
+    <div class="col-md-9 input-wrapper">
+      <div class="form-group row">
+        <% User.genders.keys.each do |gender|  %>
+            <%= f.label gender.capitalize, class: "radio form-check-label #{employee.gender == gender ? "checked" : ""}" do %>
+            <%= f.radio_button :gender, gender, class: "form-check-input" , required: "required" %>
+            <span class="icons">
+              <span class="first-icon fa fa-circle-o"></span>
+              <span class="second-icon fa fa-dot-circle-o"></span>
+            </span>
+            <%= t("activerecord.attributes.employee.gender.#{gender}") %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <% if current_user.laboratory.nil? %>
+    <div class="form-group row">
+      <div class="col-md-3 col-fom-label">
+        <%= f.label :laboratorio %>
+      </div>
+      <div class="col-md-9 input-wrapper">
+        <%= f.collection_select :laboratory_id, @laboratories, :id, :name, {}, class: "form-control", required: "required" %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group row">
+    <div class="col-md-3 col-fom-label">
+      <%= f.label :rol %>
+    </div>
+    <div class="col-md-9 input-wrapper">
+      <%= f.collection_select :role_id, @roles, :id, :name, {}, class: "form-control", required: "required" %>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <%= link_to "Cancelar", employees_path, class: "btn btn-primary sical-btn-cancel" %>
+    <%= f.submit "Guardar", class: "btn btn-primary", data: {disable_with: 'Please Wait...'}  %>
+  </div>
+
+<% end %>

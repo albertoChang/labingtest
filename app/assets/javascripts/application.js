@@ -24,5 +24,7 @@
 //= require datatables/jquery.dataTables.min
 //= require datatables/dataTables.bootstrap4.min
 //= require cocoon
+//= require datepicker-bootstrap/js/core
+//= require datepicker-bootstrap/js/datepicker
 //= require_tree ./pages
 //= require_tree .

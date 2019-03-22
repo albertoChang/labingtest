@@ -9,8 +9,8 @@ class User < ApplicationRecord
 
   belongs_to :role, required: false
   belongs_to :laboratory, required: false
-  has_many :client_services, class_name: "Service", foreign_key: 'client_id'
-  has_many :employee_services, class_name: "Service", foreign_key: 'employee_id'
+  #has_many :client_services, class_name: "Service", foreign_key: 'client_id'
+  #has_many :employee_services, class_name: "Service", foreign_key: 'employee_id'
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
@@ -32,7 +32,7 @@ class User < ApplicationRecord
 
   def self.belongs_work_environment current_user
     if current_user.admin?
-      User.employee 
+      User.employee
     elsif current_user.employee?
       where(laboratory_id: current_user.laboratory)
     end
@@ -40,7 +40,7 @@ class User < ApplicationRecord
 
   def self.initialize params, current_user
     user = User.new params
-    user.laboratory = current_user.laboratory if current_user.employee?
+    user.laboratory = current_user.laboratory if current_user.laboratory.present?
     user.password = PASSWORD
     user
   end

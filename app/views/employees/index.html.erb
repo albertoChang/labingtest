@@ -1,0 +1,14 @@
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+  <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
+    <h1 class="m-0 font-weight-bold text-primary">Empleados</h1>
+    <div>
+      <%= link_to 'Nuevo Empleado', new_employee_path, class: "btn btn-primary right" %>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <%= render 'employees_table', employees: @employees %>
+    </div>
+  </div>
+</div>
