@@ -23,4 +23,6 @@
 //= require demo/datatables-demo
 //= require datatables/jquery.dataTables.min
 //= require datatables/dataTables.bootstrap4.min
+//= require cocoon
+//= require_tree ./pages
 //= require_tree .

@@ -1,0 +1,34 @@
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" placeholder="Buscar Laboratorios">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Laboratorio</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% roles.each do |role| %>
+      <tr>
+        <td><%= role.name %></td>
+        <td><%= role.description %></td>
+        <% if role.laboratory.nil? %>
+          <td>No hay laboratorio asociado</td>
+        <% else %>
+          <td><%= role.laboratory.name %></td>
+        <% end %>
+        <td>
+          <%= link_to '<i class="fa fa-eye" aria-hidden="true"></i>'.html_safe, role_path(role), class: "btn btn-info btn-sm", data: { "toggle" => "tooltip" }, title: "Ver" %>
+          <%= link_to '<i class="fa fa-edit" aria-hidden="true"></i>'.html_safe, edit_role_path(role), class: "btn btn-success btn-sm", data: { "toggle" => "tooltip" }, title: "Editar" %>
+          <%#= link_to toggle_status_laboratory_path(role), id: "role-lock-#{role.id}", class: "btn btn-danger btn-sm", data: { "toggle" => "tooltip" }, title: "#{role.tooltip_status}", method: :put, remote: true do %>
+            <%# if role.active %>
+              <!--i class="fa fa-unlock" aria-hidden="true"></i-->
+            <%# else %>
+              <!--i class="fa fa-lock" aria-hidden="true"></i-->
+            <%# end %>
+          <%# end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
