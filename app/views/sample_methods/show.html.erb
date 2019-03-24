@@ -1,0 +1,43 @@
+<div class="card shadow mb-4">
+  <div class="card-header py-3 ">
+    <h1 class="m-0 font-weight-bold text-primary">
+      Método de ensayo 
+      <small>Ver</small>
+    </h1>
+  </div>
+  <div class="form-horizontal">
+    <div class="form-group row">
+      <label class="col-md-3 col-form-label">Nombre</label>
+      <div class="col-md-9">
+        <%= @sample_method.name %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class= "col-md-3 col-form-label">Descripción</label>
+      <div class="col-md-9">
+        <%= @sample_method.description %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-md-3 col-form-label">Costo unitario</label>
+      <div class="col-md-9">
+        <%= @sample_method.unit_cost %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-md-3 col-form-label">Acreditado? </label>
+      <div class="col-md-9">
+        <% if @sample_method.accreditation == 0 %>
+          Sí
+        <% else %>
+          No
+        <% end %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="text-center">
+        <%= link_to "Regresar", sample_methods_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>

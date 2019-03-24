@@ -21,4 +21,8 @@ Rails.application.routes.draw do
   resources :roles
 
   resources :employees
+
+  resources :sample_methods
+
+  resources :sample_categories
 end
