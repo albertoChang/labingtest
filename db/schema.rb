@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_20_125906) do
+ActiveRecord::Schema.define(version: 2019_03_25_123300) do
 
   create_table "laboratories", force: :cascade do |t|
     t.string "name"
@@ -52,6 +52,47 @@ ActiveRecord::Schema.define(version: 2019_03_20_125906) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["laboratory_id"], name: "index_roles_on_laboratory_id"
+  end
+
+  create_table "sample_categories", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.boolean "active", default: true
+    t.integer "laboratory_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["laboratory_id"], name: "index_sample_categories_on_laboratory_id"
+  end
+
+  create_table "sample_category_features", force: :cascade do |t|
+    t.float "minimun_value", default: 0.0
+    t.float "maximum_value", default: 0.0
+    t.string "description"
+    t.integer "sample_category_method_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sample_category_method_id"], name: "index_sample_category_features_on_sample_category_method_id"
+  end
+
+  create_table "sample_category_methods", force: :cascade do |t|
+    t.integer "sample_category_id"
+    t.integer "sample_method_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sample_category_id"], name: "index_sample_category_methods_on_sample_category_id"
+    t.index ["sample_method_id"], name: "index_sample_category_methods_on_sample_method_id"
+  end
+
+  create_table "sample_methods", force: :cascade do |t|
+    t.float "unit_cost"
+    t.string "name"
+    t.string "description"
+    t.boolean "active", default: true
+    t.integer "accreditation", default: 1
+    t.integer "laboratory_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["laboratory_id"], name: "index_sample_methods_on_laboratory_id"
   end
 
   create_table "users", force: :cascade do |t|

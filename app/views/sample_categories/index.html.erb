@@ -1,0 +1,13 @@
+<div class="card shadow mb-4">
+  <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
+    <h1 class="m-0 font-weight-bold text-primary">Categorías de muestra</h1>
+    <div>
+      <%= link_to 'Nueva Categoría', new_sample_category_path, class: "btn btn-primary right" %>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <%= render 'sample_categories_table', sample_categories: @sample_categories %>
+    </div>
+  </div>
+</div>

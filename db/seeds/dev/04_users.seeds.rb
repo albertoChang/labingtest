@@ -1,6 +1,6 @@
 role = Role.find_by(name: "cliente")
 User.create(first_name: "john", last_name: "Doe", phone: "5555555", address: "Av. Universitaria 1801, San Miguel Lima 32", category: User.categories["client"], ruc: "12345678912", role: role, email: "john_doe@pucp.pe", password: "pucppass2018")
-role = Role.find_by(name: "empleado")
+role = Role.find_by(name: "admin_labA")
 laboratory = Laboratory.find_by(name: "laboratorio Test A")
 User.create(first_name: "Juan", last_name: "Perez", phone: "5555555", address: "Av. Universitaria 1801, San Miguel Lima 32", category: User.categories["employee"], ruc: "12345678912", role: role, laboratory: laboratory, email: "juan_perez@pucp.pe", password: "pucppass2018")
 role = Role.find_by(name: "administrador")
