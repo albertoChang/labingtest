@@ -25,6 +25,11 @@ class SampleCategoriesController < ApplicationController
   end
 
   def update
+    if @sample_category.update_attributes sample_category_params
+      redirect_to sample_categories_path
+    else
+      render :edit
+    end
   end
 
   def show
