@@ -1,0 +1,41 @@
+<div class="card shadow mb-4">
+  <div class="card-header py-3 ">
+    <h1 class="m-0 font-weight-bold text-primary">Categoría de muestra <small>Ver</small></h1>
+  </div>
+  <div class="form-horizontal validate">
+    <div class="form-group row">
+      <label class="col-md-3 col-fom-label">Nombre :</label>
+      <div class="col-md-9">
+        <%= @sample_category.name %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-md-3">Descripción :</label>
+      <div class="col-md-9">
+        <%= @sample_category.description %>
+      </div>
+    </div>
+    <% @sample_category.sample_category_methods.each do |sample_category_method| %>
+      <h4><%= sample_category_method.sample_method.name %></h4>
+      <table class="table table-no-bordered table-hover">
+        <thead>
+          <th>Concepto</th>
+          <th>Valor Mínimo</th>
+          <th>Valor Máximo</th>
+        </thead>
+        <% sample_category_method.sample_category_features.each do |feature|%>
+          <tr>
+            <td><%= feature.description %></td>
+            <td><%= feature.minimun_value %></td>
+            <td><%= feature.maximum_value %></td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+    <div class="form-group">
+      <div class="text-center">
+        <%= link_to "Volver", sample_categories_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
