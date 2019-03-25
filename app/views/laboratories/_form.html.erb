@@ -30,11 +30,9 @@
       <%= f.text_area :description, class: "form-control form-control-user item-description", rows: "5", required:"required" %>
     </div>
   </div>
-  <div class="sical-form-buttons">
-    <div class="text-center">
-      <%= link_to "Cancelar", laboratories_path, class: "btn btn-primary sical-btn-cancel" %>
-      <%= f.submit "Guardar", class: "btn btn-primary", data: {disable_with: 'Please Wait...'}  %>
-    </div>
+  <div class="text-center">
+    <%= link_to "Cancelar", laboratories_path, class: "btn btn-primary sical-btn-cancel" %>
+    <%= f.submit "Guardar", class: "btn btn-primary", data: {disable_with: 'Please Wait...'}  %>
   </div>
 
 <% end %>
