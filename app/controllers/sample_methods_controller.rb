@@ -23,8 +23,7 @@ class SampleMethodsController < ApplicationController
   end
 
   def update
-    @sample_method.assign_attributes sample_method_params
-    if @sample_method.valid
+    if @sample_method.update_attributes sample_method_params
       #Audit.register current_user, @action, @controller, register_status = true
       redirect_to sample_methods_path
     else
